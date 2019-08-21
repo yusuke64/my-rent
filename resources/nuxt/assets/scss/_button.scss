@@ -1,0 +1,38 @@
+button {
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin botton_style($color) {
+  border-color: $color;
+  color: $color;
+}
+
+.button {
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  @include botton_style(#052e22);
+  transition: all .3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &.delete {
+    @include botton_style(#f01405);
+  }
+
+  &.edit {
+    @include botton_style(#15052e);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
